@@ -109,12 +109,22 @@ class DatePickerScreen extends StatefulWidget {
 }
 
 class _DatePickerScreenState extends State<DatePickerScreen> {
-  CustomDatePickerController _controller = new CustomDatePickerController(
-      onRangeSelected: (DateTime a, DateTime b) {
-        print(a);
-        print(b);
-      },
-      windowSize: 2);
+  bool isRangePicker = false;
+  DateTime firstDate;
+  DateTime lastDate;
+
+  void handleRangeSelection(DateTime fDay, DateTime lDay) {
+    print('Here goes all the handling');
+    print(fDay);
+    print(lDay);
+    setState(() {
+      firstDate = fDay;
+      lastDate = lDay;
+    });
+  }
+
+  CustomDatePickerController _controller =
+      new CustomDatePickerController(windowSize: 2);
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +148,13 @@ class _DatePickerScreenState extends State<DatePickerScreen> {
         ),
         actions: [
           TextButton(
-              onPressed: () => {},
+              onPressed: () {
+                print('I should be sending this back :: $firstDate $lastDate');
+                Map<String, DateTime> mp = new Map();
+                mp['firstDate'] = firstDate;
+                mp['lastDate'] = lastDate;
+                Navigator.pop(context, mp);
+              },
               child: Text(
                 'Save',
                 style: TextStyle(
@@ -148,12 +164,14 @@ class _DatePickerScreenState extends State<DatePickerScreen> {
       ),
       body: Container(
         color: Colors.white,
-        padding: EdgeInsets.only(top: 20.0),
+        padding: EdgeInsets.only(top: 20.0, left: 10.0, right: 10.0),
         child: CustomDatePicker(
           _controller,
-          isRangePicker: true,
+          isRangePicker: isRangePicker,
           selectedDayBgColor: Color.fromRGBO(8, 24, 101, 1),
           inBetweenBgColor: Color.fromRGBO(8, 24, 101, 0.1),
+          onDateSelect: (DateTime fDay, DateTime lDay) =>
+              handleRangeSelection(fDay, lDay),
         ),
       ),
     );

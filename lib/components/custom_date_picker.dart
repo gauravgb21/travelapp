@@ -306,15 +306,13 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
         }
       }
     }
-    if (controller != null && controller.onRangeSelected != null) {
-      controller.onRangeSelected(firstDate, lastDate);
-    }
+    widget.onDateSelect(firstDate, lastDate);
   }
 
   void removeSelect() {
     firstDate = null;
     lastDate = null;
-    controller.onRangeSelected(firstDate, lastDate);
+    widget.onDateSelect(firstDate, lastDate);
   }
 
   void notify() {
