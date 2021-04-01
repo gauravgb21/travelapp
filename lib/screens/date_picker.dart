@@ -109,7 +109,6 @@ class DatePickerScreen extends StatefulWidget {
 }
 
 class _DatePickerScreenState extends State<DatePickerScreen> {
-  bool isRangePicker = false;
   DateTime firstDate;
   DateTime lastDate;
 
@@ -128,6 +127,7 @@ class _DatePickerScreenState extends State<DatePickerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final Map<String, dynamic> args = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -167,7 +167,7 @@ class _DatePickerScreenState extends State<DatePickerScreen> {
         padding: EdgeInsets.only(top: 20.0, left: 10.0, right: 10.0),
         child: CustomDatePicker(
           _controller,
-          isRangePicker: isRangePicker,
+          isRangePicker: args['showRangePicker'],
           selectedDayBgColor: Color.fromRGBO(8, 24, 101, 1),
           inBetweenBgColor: Color.fromRGBO(8, 24, 101, 0.1),
           onDateSelect: (DateTime fDay, DateTime lDay) =>

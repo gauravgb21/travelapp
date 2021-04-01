@@ -12,7 +12,7 @@ class FlightDetails extends StatefulWidget {
 
 class _FlightDetailsState extends State<FlightDetails> {
   String _to = 'Mumbai', _from = 'New Delhi';
-  String _departureDate = '-', _returnDate = '-';
+  String _departureDate = '-', _returnDate = '-', _bookingDate = '-';
   String dateType = 'DEPARTURE';
   Map<int, String> weekDayMap = {
     1: 'Mon',
@@ -58,9 +58,10 @@ class _FlightDetailsState extends State<FlightDetails> {
     });
   }
 
-  void _navigateAndSetDateForFlight() async {
+  void _navigateAndSetDateForFlight(bool showRangePicker) async {
     print('Date Picker was called !!');
-    dynamic result = await Navigator.pushNamed(context, '/datepicker');
+    dynamic result = await Navigator.pushNamed(context, '/datepicker',
+        arguments: {'showRangePicker': showRangePicker});
     DateTime fDay = result['firstDate'], lDay = result['lastDate'];
     String newDate = fDay.day.toString() +
         ' ' +
@@ -69,11 +70,19 @@ class _FlightDetailsState extends State<FlightDetails> {
         weekDayMap[fDay.weekday] +
         ',' +
         fDay.year.toString();
+    String newLDate = lDay.day.toString() +
+        ' ' +
+        monthMap[lDay.month] +
+        ' ' +
+        weekDayMap[lDay.weekday] +
+        ',' +
+        lDay.year.toString();
     setState(() {
-      if (dateType == 'DEPARTURE') {
+      if (showRangePicker) {
         _departureDate = newDate;
+        _returnDate = newLDate;
       } else {
-        _returnDate = newDate;
+        _bookingDate = newDate;
       }
     });
   }
@@ -142,7 +151,7 @@ class _FlightDetailsState extends State<FlightDetails> {
                           setState(() {
                             dateType = 'DEPARTURE';
                           });
-                          _navigateAndSetDateForFlight();
+                          _navigateAndSetDateForFlight(true);
                         },
                         child: Container(
                           padding: EdgeInsets.all(10),
@@ -176,7 +185,7 @@ class _FlightDetailsState extends State<FlightDetails> {
                           setState(() {
                             dateType = 'RETURN';
                           });
-                          _navigateAndSetDateForFlight();
+                          _navigateAndSetDateForFlight(true);
                         },
                         child: Container(
                           padding: EdgeInsets.all(10),
@@ -206,6 +215,36 @@ class _FlightDetailsState extends State<FlightDetails> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    _navigateAndSetDateForFlight(false);
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(74, 95, 149, 0.1),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                          child: Text('BOOKING DATE',
+                              style: TextStyle(
+                                  fontSize: 13.0,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black54)),
+                        ),
+                        Text(this._bookingDate,
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black))
+                      ],
+                    ),
                   ),
                 ),
                 GestureDetector(
