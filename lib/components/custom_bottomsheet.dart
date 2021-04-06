@@ -61,7 +61,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet>
                 style: TextStyle(
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(8, 24, 101, 1)),
+                    color: Colors.black),
               ),
             ),
             Padding(
@@ -107,6 +107,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet>
                   Container(
                     margin: EdgeInsets.only(right: 10.0),
                     width: 140.0,
+                    height: 45.0,
                     decoration: BoxDecoration(color: Colors.white, boxShadow: [
                       BoxShadow(
                           color: Color.fromRGBO(0, 0, 0, 0.2),
@@ -192,6 +193,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet>
                   Container(
                     margin: EdgeInsets.only(right: 10.0),
                     width: 140.0,
+                    height: 45.0,
                     decoration: BoxDecoration(color: Colors.white, boxShadow: [
                       BoxShadow(
                           color: Color.fromRGBO(0, 0, 0, 0.2),
@@ -277,6 +279,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet>
                   Container(
                     margin: EdgeInsets.only(right: 10.0),
                     width: 140.0,
+                    height: 45.0,
                     decoration: BoxDecoration(color: Colors.white, boxShadow: [
                       BoxShadow(
                           color: Color.fromRGBO(0, 0, 0, 0.2),
@@ -331,10 +334,11 @@ class _CustomBottomSheetState extends State<CustomBottomSheet>
             ),
             Container(
               width: MediaQuery.of(context).size.width * 1.0,
+              height: 50.0,
               margin: EdgeInsets.only(top: 60.0, left: 10.0, right: 10.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(3.0)),
-                color: Color.fromRGBO(8, 24, 101, 1),
+                color: Theme.of(context).primaryColor,
               ),
               child: TextButton(
                 onPressed: () {

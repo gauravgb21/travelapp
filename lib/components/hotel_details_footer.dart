@@ -45,7 +45,7 @@ class HotelDetailsFooter extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 15.0),
               ),
               style: TextButton.styleFrom(
-                  backgroundColor: Color.fromRGBO(8, 24, 101, 1)),
+                  backgroundColor: Theme.of(context).primaryColor),
             ),
           )
         ],

@@ -14,7 +14,7 @@ class BLNavItem extends StatelessWidget {
       height: 100.0,
       margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
       decoration: BoxDecoration(
-          color: Color.fromRGBO(74, 95, 149, 0.1),
+          color: Color(0xfff7f7f7),
           borderRadius: BorderRadius.all(Radius.circular(10.0))),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

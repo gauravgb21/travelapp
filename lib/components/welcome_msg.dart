@@ -12,8 +12,8 @@ class WelcomeMsg extends StatelessWidget {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Color.fromRGBO(8, 24, 101, 0.7),
-                Color.fromRGBO(8, 24, 101, 1)
+                Color.fromRGBO(255, 102, 75, 0.7),
+                Color.fromRGBO(255, 102, 75, 1)
               ]),
           borderRadius: BorderRadius.all(Radius.circular(10.0))),
       child: Column(

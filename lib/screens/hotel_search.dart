@@ -179,14 +179,14 @@ class _HotelSearchState extends State<HotelSearch> {
         title: Text(
           'Hotels',
           style: TextStyle(
-              color: Color.fromRGBO(8, 24, 101, 1),
+              color: Theme.of(context).primaryColor,
               fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
           icon: Icon(
             Icons.keyboard_arrow_left,
             size: 38.0,
-            color: Color.fromRGBO(8, 24, 101, 1),
+            color: Theme.of(context).primaryColor,
           ),
           splashRadius: 20.0,
           onPressed: () => Navigator.pop(context),

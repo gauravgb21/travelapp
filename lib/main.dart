@@ -18,8 +18,16 @@ class MyApp extends StatelessWidget {
       title: 'Travel Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primaryColor: Color(0xffff664b),
+          // Define the default TextTheme. Use this to specify the default
+          // text styling for headlines, titles, bodies of text, and more.
+          textTheme: TextTheme(
+            headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+            headline6: TextStyle(
+              fontSize: 32.0,
+            ),
+            bodyText2: TextStyle(fontSize: 14.0),
+          )),
       initialRoute: 'homepage',
       routes: {
         '/': (context) => HomePage(),

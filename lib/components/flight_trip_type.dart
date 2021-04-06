@@ -22,13 +22,14 @@ class _FlightTripTypeState extends State<FlightTripType> {
       height: 45.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(5)),
-        color: Color.fromRGBO(74, 95, 149, 0.1),
+        color: Color(0xfff7f7f7),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             width: (MediaQuery.of(context).size.width - 40) * 0.33,
+            height: 45.0,
             child: TextButton(
               child: Text(
                 'Round Trip',
@@ -38,7 +39,7 @@ class _FlightTripTypeState extends State<FlightTripType> {
               ),
               style: TextButton.styleFrom(
                   backgroundColor: selectedBtn == 'RT'
-                      ? Color.fromRGBO(8, 24, 101, 1)
+                      ? Theme.of(context).primaryColor
                       : Colors.transparent,
                   padding: EdgeInsets.all(12)),
               onPressed: () => handleBtnClick('RT'),
@@ -46,6 +47,7 @@ class _FlightTripTypeState extends State<FlightTripType> {
           ),
           Container(
             width: (MediaQuery.of(context).size.width - 40) * 0.33,
+            height: 45.0,
             child: TextButton(
               child: Text(
                 'One Way',
@@ -55,7 +57,7 @@ class _FlightTripTypeState extends State<FlightTripType> {
               ),
               style: TextButton.styleFrom(
                   backgroundColor: selectedBtn == 'OW'
-                      ? Color.fromRGBO(8, 24, 101, 1)
+                      ? Theme.of(context).primaryColor
                       : Colors.transparent,
                   padding: EdgeInsets.all(12)),
               onPressed: () => handleBtnClick('OW'),
@@ -63,6 +65,7 @@ class _FlightTripTypeState extends State<FlightTripType> {
           ),
           Container(
               width: (MediaQuery.of(context).size.width - 40) * 0.33,
+              height: 45.0,
               child: TextButton(
                 child: Text(
                   'Multi City',
@@ -72,7 +75,7 @@ class _FlightTripTypeState extends State<FlightTripType> {
                 ),
                 style: TextButton.styleFrom(
                     backgroundColor: selectedBtn == 'MC'
-                        ? Color.fromRGBO(8, 24, 101, 1)
+                        ? Theme.of(context).primaryColor
                         : Colors.transparent,
                     padding: EdgeInsets.all(12)),
                 onPressed: () => handleBtnClick('MC'),

@@ -156,7 +156,9 @@ class _FlightDetailsState extends State<FlightDetails> {
                         child: Container(
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Color.fromRGBO(74, 95, 149, 0.1),
+                              color: Color(0xfff7f7f7),
+                              border: Border.all(
+                                  width: 1.0, color: Color(0xffe7e7e7)),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(5))),
                           width:
@@ -190,7 +192,9 @@ class _FlightDetailsState extends State<FlightDetails> {
                         child: Container(
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Color.fromRGBO(74, 95, 149, 0.1),
+                              color: Color(0xfff7f7f7),
+                              border: Border.all(
+                                  width: 1.0, color: Color(0xffe7e7e7)),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(5))),
                           width:
@@ -226,7 +230,9 @@ class _FlightDetailsState extends State<FlightDetails> {
                     margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(74, 95, 149, 0.1),
+                        color: Color(0xfff7f7f7),
+                        border:
+                            Border.all(width: 1.0, color: Color(0xffe7e7e7)),
                         borderRadius: BorderRadius.all(Radius.circular(5))),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -254,7 +260,9 @@ class _FlightDetailsState extends State<FlightDetails> {
                     margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(74, 95, 149, 0.1),
+                        color: Color(0xfff7f7f7),
+                        border:
+                            Border.all(width: 1.0, color: Color(0xffe7e7e7)),
                         borderRadius: BorderRadius.all(Radius.circular(5))),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -293,7 +301,7 @@ class _FlightDetailsState extends State<FlightDetails> {
                         ),
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
-                                Color.fromRGBO(8, 24, 101, 1))),
+                                Theme.of(context).primaryColor)),
                       )
                     ],
                   ),

@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         title: Text(
           'Travel App',
           style: TextStyle(
-              color: Color.fromRGBO(8, 24, 101, 1),
+              color: Theme.of(context).primaryColor,
               fontWeight: FontWeight.bold),
         ),
       ),
@@ -29,11 +29,7 @@ class HomePage extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
                 child: Text(
                   'What are you looking for ?',
-                  style: TextStyle(
-                      fontSize: 31.0,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: -1),
+                  style: Theme.of(context).textTheme.headline6,
                 )),
             Container(
               height: 100.0,
@@ -45,7 +41,7 @@ class HomePage extends StatelessWidget {
                       IconButton(
                         icon: Icon(
                           Icons.flight,
-                          color: Color.fromRGBO(8, 24, 101, 1),
+                          color: Theme.of(context).primaryColor,
                           size: 32,
                         ),
                         onPressed: () {
@@ -57,7 +53,7 @@ class HomePage extends StatelessWidget {
                       IconButton(
                         icon: Icon(
                           Icons.apartment,
-                          color: Color.fromRGBO(222, 187, 0, 1),
+                          color: Theme.of(context).primaryColor,
                           size: 32,
                         ),
                         onPressed: () {
@@ -69,7 +65,7 @@ class HomePage extends StatelessWidget {
                       IconButton(
                         icon: Icon(
                           Icons.family_restroom,
-                          color: Color.fromRGBO(74, 95, 149, 1),
+                          color: Theme.of(context).primaryColor,
                           size: 32,
                         ),
                       ),
@@ -78,7 +74,7 @@ class HomePage extends StatelessWidget {
                       IconButton(
                         icon: Icon(
                           Icons.today,
-                          color: Color.fromRGBO(74, 95, 149, 0.6),
+                          color: Theme.of(context).primaryColor,
                           size: 35,
                         ),
                       ),
@@ -115,7 +111,7 @@ class HomePage extends StatelessWidget {
                 child: IconButton(
                     icon: Icon(
                   Icons.home_outlined,
-                  color: Color.fromRGBO(8, 24, 101, 0.9),
+                  color: Theme.of(context).primaryColor,
                   size: 30,
                 )),
               ),
